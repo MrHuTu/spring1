@@ -7,6 +7,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+		//去除xml中配置的javabean
 		ApplicationContext context = new ClassPathXmlApplicationContext("spring_config.xml");
 		
 		Cat  cat=  (Cat)context.getBean("cat");
