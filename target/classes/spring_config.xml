@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.3.xsd">
+	
+	<context:component-scan base-package="cn.test.bean,cn.test.bean2"  ></context:component-scan>
+	
+	  <!-- 使AspectJ注解起作用：自动为匹配的类生产代理对象 -->
+	 <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+	<!-- <bean id="bank" class="cn.test.bean.Bank"></bean>
+	
+	<bean id="smallDog" class="cn.test.bean.Dog">
+		<constructor-arg index="0" value="哈哈"></constructor-arg>
+		<constructor-arg index="1">
+			<list>
+				<value>qqqq</value>
+			</list>	
+		</constructor-arg>	
+	</bean>
+	<bean id="Security" class="cn.test.bean.Security"></bean>
+	<bean id="litterLog" class="cn.test.bean.Log"></bean>
+	
+	<aop:config >
+		<aop:pointcut expression="execution(* cn.test.bean.Bank.*(..))" id="transfer"/>	
+		<aop:aspect ref="Security">	
+			<aop:before method="isSecurity" pointcut-ref="transfer"/>
+		</aop:aspect >
+		
+		<aop:aspect ref="litterLog">
+			<aop:after-returning method="printLog" pointcut-ref="transfer" returning="massgae"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="litterLog">
+			<aop:after method="printLog" pointcut-ref="transfer"/>		
+		</aop:aspect>
+	</aop:config> -->
+</beans>
